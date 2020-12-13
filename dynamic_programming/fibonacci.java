@@ -7,13 +7,14 @@ public class fibonacci {
 
     // here due to memoisation time complexity is reduced from n^2 to n
     public static double fib(int n, Map<Integer, Double> mem) {
-        if (n == 1 || n == 2)
+        if (n == 1 || n == 2) // base condition or smallest subproblem
             return 1;
-        if (mem.containsKey(n))
+        if (mem.containsKey(n)) // memoisation to avoid repition of solving same subproblems hence reducing time
+                                // complexity
             return mem.get(n);
-        double v = fib(n - 1, mem) + fib(n - 2, mem);
-        mem.put(n, v);
-        return mem.get(n);
+        double v = fib(n - 1, mem) + fib(n - 2, mem); // solving subproblems using recursion
+        mem.put(n, v); // storing the result of subproblems
+        return mem.get(n);// return the final result of the problem
     }
 
     // here time complexity is n^2
