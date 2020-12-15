@@ -22,13 +22,14 @@ const howSum = (targetSum, numbers) => {
   return null;
 };
 
-console.time("rec time");
-console.log(howSum(7, [5, 3, 4, 7]));
+// console.time("rec time");
+// console.log(howSum(7, [5, 3, 4, 7]));
 
-console.log(howSum(7, [2, 4]));
-console.log(howSum(8, [2, 3, 5]));
-console.log(howSum(300, [7, 14]));
-console.timeLog("rec time");
+// console.log(howSum(7, [2, 4]));
+// console.log(howSum(8, [2, 3, 5]));
+// console.log(howSum(300, [7, 14]));
+// console.timeLog("rec time");
+
 /* space time complexity 
 First visualize this problem in tree format 
 let's assume targetSum -> m and len of array is n

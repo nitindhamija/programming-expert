@@ -4,8 +4,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class fibonacci {
-
-    // here due to memoisation time complexity is reduced from n^2 to n
+    /**
+     * The key to solve any problem using recursion/DP is to visulize the problem in
+     * term of a tree, here due to memoisation time complexity is reduced from n^2
+     * to n
+     */
     public static double fib(int n, Map<Integer, Double> mem) {
         if (n == 1 || n == 2) // base condition or smallest subproblem
             return 1;
