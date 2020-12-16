@@ -4,6 +4,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class fibonacci {
+
+    // here time complexity is n^2
+    public static double fibrec(int n) {
+        if (n == 1 || n == 2)
+            return 1;
+        return fibrec(n - 1) + fibrec(n - 2);
+    }
+
     /**
      * The key to solve any problem using recursion/DP is to visulize the problem in
      * term of a tree, here due to memoisation time complexity is reduced from n^2
@@ -20,11 +28,20 @@ public class fibonacci {
         return mem.get(n);// return the final result of the problem
     }
 
-    // here time complexity is n^2
-    public static double fibrec(int n) {
-        if (n == 1 || n == 2)
-            return 1;
-        return fibrec(n - 1) + fibrec(n - 2);
+    /**
+     * The key to solve any problem using recursion/DP is to visulize the problem in
+     * term of a tree, here due to tabulation time complexity is reduced from n^2 to
+     * n
+     */
+    public static double fibTabulation(int n) {
+        double[] table = new double[n + 1];
+        table[0] = 0;
+        table[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            table[i] = table[i - 1] + table[i - 2];
+        }
+        return table[n];
+
     }
 
     public static void main(String[] args) {
@@ -32,8 +49,12 @@ public class fibonacci {
         Map<Integer, Double> memoisation = new ConcurrentHashMap<>();
         double dynamic_programming = fib(50, memoisation);
         System.out.println("nth no of fibonacci is " + dynamic_programming);
-        double rec = fibrec(50);
-        System.out.println("nth no of fibonacci is " + rec);
+        // double rec = fibrec(50);
+        // System.out.println("nth no of fibonacci is " + rec);
+
+        double dynamic_programming_tab = fibTabulation(50);
+        System.out.println("nth no of fibonacci is " + dynamic_programming_tab);
+
     }
 
 }
