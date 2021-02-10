@@ -2,9 +2,9 @@
  *
  * @param {*} targetSum
  * @param {*} numbers array of non-negative numbers
- * space time complexity First visualize this problem in tree format let's assume targetSum -> m and len of array is nnow for space
+ * space time complexity First visualize this problem in tree format let's assume targetSum -> m and len of array is n now for space
  * complexity let's calculate the height, since space complexity is stacks in a path from root to leaf node in worst case
- * i.e targetSum=7 array=[1,1,1,1,1,1,1] i.e doing 7-1 m times to make it 0 so we have height of tree = m  for time complexity
+ * i.e targetSum=7 array=[1,1,1,1,1,1,1] i.e doing 7-1 m times to make it 0 so we have height of tree = m now for time complexity
  * let's calculate no of recursive function calls or no of nodes so no of nodes at level 0  *  no of nodes at level 1 * no of nodes
  * at level 2 ...  node of nodes at level m i.e 1*n*n*...*n i.e multiplying n m times which is n^m*/
 
