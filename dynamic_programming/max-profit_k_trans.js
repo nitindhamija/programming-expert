@@ -7,12 +7,12 @@
  * space complexity O(m^2)
  * [5, 11, 3, 50, 60, 90] k=2
  */
-const maxProfitKTrans = (k, numbers, end = 0, profit = 0, mem = {}) => {
+const maxProfitKTrans = (k, numbers, end = -1, profit = 0, mem = {}) => {
   let maxProfit = 0;
   let len = numbers.length;
   if (k === 0) return profit;
   if (end >= len) return null;
-
+  if (end === -1) end++;
   //k = k - 1;
   //end = end + 2;
   for (let i = end + 1; i < len; i++) {
@@ -20,11 +20,11 @@ const maxProfitKTrans = (k, numbers, end = 0, profit = 0, mem = {}) => {
     let possibleProfit = maxProfitKTrans(
       k - 1,
       numbers,
-      end + i + 1,
+      i + 1,
       numbers[i] - numbers[end],
       mem
     );
-
+    //end++;
     if (possibleProfit !== null) {
       maxProfit = max(maxProfit, possibleProfit);
     }
