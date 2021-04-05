@@ -44,6 +44,7 @@ const howSumDP = (targetSum, numbers, mem = {}) => {
   if (targetSum === 0) return []; //ideal base case since this case means recursion path has the sum which is matching target sum
   if (targetSum < 0) return null; // case where target sum no has become -ve in recursion calls and hence no need to dig deeper for a match
   if (targetSum in mem) return mem[targetSum]; // checking and returning the value of subproblem if it has already been solved i.e in tree visulization a similar subtree has already traversed and we know what if would return
+
   for (let n of numbers) {
     //loop through the array of numbers and divide the prob in sub-problems using remainder i.e targetSum - n
     let possiblePath = howSumDP(targetSum - n, numbers, mem); // return null or []
